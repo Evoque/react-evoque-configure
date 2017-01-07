@@ -27,22 +27,9 @@ const common = {
   },
   module: {
     loaders: [
-      {
-        test: /\.css$/,
-        loaders: ['style', 'css'],
-        include: PATHS.app
-      },
-      {
-        test: /\.jsx?$/,
-        // Enable caching for improved performance during development
-        // It uses default OS directory by default. 
-        // can custom: babel?cacheDirectory=<path>
-        loader: 'babel',
-        query: {
-          cacheDirectory: true
-        },
-        include: PATHS.app
-      }
+      { test: /\.css$/, loaders: ['style', 'css'], include: PATHS.app },
+      { test: /\.jsx?$/, loader: 'babel', query: { cacheDirectory: true }, include: PATHS.app },
+      { test: /\.(png|jpg|jpeg|)$/, loader: 'url-loader?limit=2000000', include: PATHS.app }
     ]
   }
 };

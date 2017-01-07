@@ -1,12 +1,17 @@
- 
+
 import React from 'react';
 import Note from './Note.jsx';
- 
+import Img from './Img';
+
+
 export default class App extends React.Component {
 
   render() {
     return (
-      <Note />
+      <div>
+        <Note />
+        <Img />
+      </div>
     );
   }
 
